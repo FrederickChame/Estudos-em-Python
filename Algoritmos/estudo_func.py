@@ -10,7 +10,7 @@ import math
 
 def dec_to_bin(numero):
     '''
-    Função que converte números decimais e números binários
+    Função que converte números decimais em números binários
     '''
     resultado = 0
     indice = 1
@@ -26,7 +26,7 @@ def dec_to_bin(numero):
 
 def bin_to_dec(numero):
     '''
-    Tentativa de criar uma função que converta valores decimais com ponto flutuante em seu valor correspondente em representação decimal.
+    Tentativa de criar uma função que converte valores decimais com ponto flutuante em seu valor correspondente em representação decimal.
     '''
     numero = str(numero)
     if '.' in numero:
