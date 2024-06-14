@@ -50,13 +50,11 @@ def bin_to_dec(numero):
         for algarismo in alg_int_ordenados:
             representacao_int += int(algarismo) * (2 ** indice)
             indice += 1
-            print('processando..')
         index = 1
         representacao_frac = 0
         for digito in alg_frac:
             representacao_frac += int(digito) * (2 ** - index)
             index += 1
-            print('processando...')
         return representacao_int + representacao_frac
     else: #Tratamento de casos onde o input é inteiro
         algarismos = [int(x) for x in str(numero)] # Cria uma lista com os algarismos do número a ser convertido
@@ -66,7 +64,6 @@ def bin_to_dec(numero):
         for algarismo in algarismos_ordenados:
             representacao_int += algarismo * (2 ** indice)
             indice += 1
-            print('processando int...')
         return representacao_int
     
 def mdc(num1, num2):
@@ -102,6 +99,20 @@ def combinacao(n, k):
 #########################################
 #           FUNÇÕES ESTATÍSTICAS        #
 #########################################
+
+def distribuicao_poisson(parametro, x):
+    '''
+    Calcula a probabilidade de uma v.a. com Distribuição Poisson
+    '''
+    from math import e
+    from math import factorial
+    if not (parametro > 0):
+       raise ValueError("lambda deve ser maior do que 0.") 
+    elif not (type(x) == float or type(x) == int):
+        raise TypeError("x deve ser um número.")
+    else:
+        resultado = (e**(-parametro) * (parametro)**x)/factorial(x)
+        return resultado
 
 def freq_rel(freq_evento, espaco_amostral):
     '''função que retorna a frequência relativa de um evento'''
